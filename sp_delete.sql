@@ -14,7 +14,7 @@ language plpgsql AS
             DELETE FROM customers
             WHERE customers.id = _id
             RETURNING 1)
-            select count(*) into rows_count from row;
+            SELECT COUNT(*) INTO rows_count FROM row;
             return rows_count;
         END;
     $$;
@@ -38,7 +38,7 @@ language plpgsql AS
             DELETE FROM customers
             WHERE customers.id = _id
             RETURNING 1)
-            SELECT count(*) INTO rows_count FROM row;
+            SELECT COUNT(*) INTO rows_count FROM row;
             return rows_count;
 
         END;
